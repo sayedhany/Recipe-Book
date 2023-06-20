@@ -10,7 +10,10 @@ export class ShoppingListComponent {
     new Ingredient('Apples', 5),
     new Ingredient('Tomatoes', 10),
   ];
- 
+  newShopping: Ingredient;
   constructor() {}
-
+  getNewValue(newValue: { name: string; amount: number }) {
+    this.newShopping = new Ingredient(newValue.name, newValue.amount);
+    this.ingredients.push(this.newShopping);
+  }
 }
