@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Ingredient } from '../shared/ingedients.model';
 @Component({
   selector: 'app-shopping-list',
@@ -10,4 +10,7 @@ export class ShoppingListComponent {
     new Ingredient('Apples', 5),
     new Ingredient('Tomatoes', 10),
   ];
+ 
+  constructor() {}
+
 }
