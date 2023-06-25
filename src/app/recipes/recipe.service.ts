@@ -7,12 +7,14 @@ export class RecipeService {
   recipeSelected = new EventEmitter<Recipe>();
   private recipes: Recipe[] = [
     new Recipe(
+      1,
       'A Test Recipe 1',
       'This is simply a test 1',
       'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg',
       [new Ingredient('meet', 5), new Ingredient('french Fries', 50)]
     ),
     new Recipe(
+      2,
       'A Test Recipe 2',
       'This is simply a test 2',
       'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg',
@@ -24,6 +26,9 @@ export class RecipeService {
     return this.recipes.slice();
   }
   addIngridents(ingridents: Ingredient[]) {
-    this.shoppingListService.addIngridents(ingridents)
+    this.shoppingListService.addIngridents(ingridents);
+  }
+  getRecipe(id: number) {
+    return this.recipes.slice()[id-1];
   }
 }
