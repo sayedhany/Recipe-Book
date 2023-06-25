@@ -11,8 +11,6 @@ export class AppComponent {
   btnDisable: boolean = false;
   show: boolean = false;
   setcolor = false;
-  showRecipe: boolean = true;
-  showShopping: boolean = false;
   constructor() {
     setTimeout(() => {
       this.btnDisable = !this.btnDisable;
@@ -23,13 +21,5 @@ export class AppComponent {
     // console.log(event);
     const value = (<HTMLInputElement>event.target).value;
     console.log(value);
-  }
-  showRecipeOrShoppingClicked(states: {
-    showRecipe: boolean;
-    showShopping: boolean;
-  }) {
-    this.showRecipe = states.showRecipe;
-    this.showShopping = states.showShopping;
-    console.log(this.showRecipe, this.showShopping);
   }
 }
