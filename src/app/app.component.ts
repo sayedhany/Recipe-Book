@@ -6,20 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'new-app';
-  numId: number = 50;
-  btnDisable: boolean = false;
-  show: boolean = false;
-  setcolor = false;
-  constructor() {
-    setTimeout(() => {
-      this.btnDisable = !this.btnDisable;
-    }, 2000);
-  }
-  onInputType(event: any) {
-    this.show = true;
-    // console.log(event);
-    const value = (<HTMLInputElement>event.target).value;
-    console.log(value);
-  }
+
 }
