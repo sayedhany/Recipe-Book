@@ -14,7 +14,7 @@ export class RecipesComponent implements OnInit, OnDestroy {
   isSub: Subscription;
   constructor() {}
   ngOnInit(): void {
-    // this.isSub = this.recipeService.recipeSelected.subscribe((recipe) => {
+    // this.isSub = this.recipeService. recipeSelected.subscribe((recipe) => {
     //   this.recipeInfo = recipe;
     // });
   }
