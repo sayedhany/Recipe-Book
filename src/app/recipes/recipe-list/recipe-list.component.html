@@ -5,6 +5,12 @@
 </div>
 <div class="row" style="margin-top: 1rem">
   <div class="col-xs-12">
-    <app-recipe-item *ngFor="let recipe1 of recipes" [recipe]="recipe1" />
+    <app-recipe-item />
+    <ng-template [ngIf]="recipes.length === 0">
+      <h3>No Recipes to preview</h3>
+    </ng-template>
   </div>
+  <!-- [recipe]="recipe1" -->
+  <!-- *ngFor="let recipe1 of recipes; let i = index" -->
+  <!-- [index]="i"  -->
 </div>
