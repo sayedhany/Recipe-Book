@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Recipe } from '../recipe.model';
 import { RecipeService } from './recipe.service';
 import { Subscription } from 'rxjs';
+import { DataStorageService } from '../shared/data-storage.service';
 
 @Component({
   selector: 'app-recipes',
@@ -12,11 +13,9 @@ import { Subscription } from 'rxjs';
 export class RecipesComponent implements OnInit, OnDestroy {
   // recipeInfo: Recipe;
   isSub: Subscription;
-  constructor() {}
+  constructor(private dataStorage: DataStorageService) {}
   ngOnInit(): void {
-    // this.isSub = this.recipeService. recipeSelected.subscribe((recipe) => {
-    //   this.recipeInfo = recipe;
-    // });
+    // this.dataStorage.fetchData()
   }
   ngOnDestroy(): void {
     // this.isSub.unsubscribe();
