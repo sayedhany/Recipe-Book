@@ -1,15 +1,20 @@
-import { HttpClient } from '@angular/common/http';
+import { AuthService } from './../auth/auth.service';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Recipe } from '../recipe.model';
 import { RecipeService } from '../recipes/recipe.service';
-import { map, tap } from 'rxjs';
+import { exhaustMap, map, take, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataStorageService {
   url = 'https://recipes-40648-default-rtdb.firebaseio.com/';
-  constructor(private http: HttpClient, private recipeService: RecipeService) {}
+  constructor(
+    private http: HttpClient,
+    private recipeService: RecipeService,
+    private authService: AuthService
+  ) {}
   storeRecipes() {
     const recipes = this.recipeService.getRecipes();
     this.http.put(`${this.url}/recipes.json`, recipes).subscribe((res) => {
