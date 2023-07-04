@@ -12,9 +12,12 @@ import { Observable } from 'rxjs';
 export class AuthComponent {
   isLogInMode = true;
   isLoading = false;
-  error: string = '';
+  error: string = null!;
   onSwitchMode() {
     this.isLogInMode = !this.isLogInMode;
+  }
+  onHandleError() {
+    this.error = '';
   }
   constructor(private authService: AuthService, private router: Router) {}
   onSubmit(authForm: NgForm) {

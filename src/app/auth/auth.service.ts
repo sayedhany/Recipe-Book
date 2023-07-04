@@ -115,15 +115,17 @@ export class AuthService {
     if (!errorRes.error || !errorRes.error.error) {
       return throwError(errorMessage);
     }
+    console.log('Error work', errorRes.error.error);
     switch (errorRes.error.error.message) {
-      case 'EMAIL_EXISTS':
-        errorMessage = 'This email exists already';
-        break;
       case 'INVALID_PASSWORD':
         errorMessage = 'Invalid password..';
         break;
       case 'EMAIL_NOT_FOUND':
         errorMessage = 'this email not found.';
+        break;
+      case 'EMAIL_EXISTS':
+        errorMessage = 'This email exists already';
+        break;
     }
     return throwError(errorMessage);
   }
